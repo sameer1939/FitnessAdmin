@@ -1,0 +1,22 @@
+<div class="divBody">
+    <div class="center">
+        <h1>Admin Login</h1>
+        <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+            <div class="txt_field">
+                <input type="text" required ngModel name="username">
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" ngModel name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="pass">Forgot Password?</div>
+            <button type="submit" [disabled]="!loginForm.valid" >Login</button>
+            <div class="signup_link">
+
+            </div>
+        </form>
+    </div>
+</div>
