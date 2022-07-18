@@ -1,22 +1,47 @@
-<div class="divBody">
-    <div class="center">
-        <h1>Admin Login</h1>
-        <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
-            <div class="txt_field">
-                <input type="text" required ngModel name="username">
-                <span></span>
-                <label>Username</label>
-            </div>
-            <div class="txt_field">
-                <input type="password" ngModel name="password" required>
-                <span></span>
-                <label>Password</label>
-            </div>
-            <div class="pass">Forgot Password?</div>
-            <button type="submit" [disabled]="!loginForm.valid" >Login</button>
-            <div class="signup_link">
-
-            </div>
-        </form>
+<div class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Admin</b> Login</a>
     </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+  
+        <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="username" required ngModel name="username">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" ngModel name="password" required placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+  
+        
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
 </div>
+  <!-- /.login-box -->
