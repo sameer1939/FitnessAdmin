@@ -6,8 +6,8 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Category List</h3>
-              <a routerLink="/admin/addcategory" class="btn btn-success float-sm-right">Add New Category</a>
+              <h3 class="card-title">Sub Category List</h3>
+              <a routerLink="/admin/addsubcategory" class="btn btn-success float-sm-right">Add Sub Category</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -15,20 +15,22 @@
                 <thead>
                   <tr>
                     <th>S.No</th>
-                    <th>Category Name</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
                     <th>Is Visible</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of categoryList; let i=index">
+                  <tr *ngFor="let item of subCategoryList; let i=index">
                     <td>{{i+1}}</td>
-                    <td>{{item.name}}
-                    </td>
+                    <td>{{item.categoryName}}</td>
+                    <td>{{item.subCategoryName}}</td>
                     <td>{{item.visible}}</td>
                     <td> 
-                      <a href="javascript:void(0)" class="btn btn-success mr-2" (click)="EditCategory(item.id)">Edit</a>
-                      <a href="javascript:void(0)" (click)="deleteCategory(item.id)" class="btn btn-danger">Delete</a>
+                      <a href="javascript:void(0)" class="btn btn-success mr-2" (click)="editSubCategory(item.id)">Edit</a>
+                      <a href="javascript:void(0)" class="btn btn-warning" (click)="deleteSubCategory(item.id)">Delete</a>
+                    </td>
                   </tr>
                   
                 </tbody>

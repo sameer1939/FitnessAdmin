@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,11 @@ import { HeaderComponent } from './Layout/header/header.component';
 import { SidebarComponent } from './Layout/sidebar/sidebar.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { CategoryService } from './services/category.service';
+import { AlertifyService } from './services/alertify.service';
+import { ErrorHandlingInterceptor } from './shared/Errorhandling.interceptor';
+import { SubcategoryComponent } from './Admin/category/subcategory/subcategory.component';
+import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcategory/addsubcategory.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +30,24 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    SubcategoryComponent,
+    AddsubcategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, CategoryService,AlertifyService,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:ErrorHandlingInterceptor,
+    multi:true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/services/alertify.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  categoryList:any[];
+  constructor(private categoryService:CategoryService,private alertify:AlertifyService,private router:Router) { }
 
   ngOnInit(): void {
+    this.bindCategory();
   }
 
+  bindCategory(){
+    this.categoryService.bindCategory().subscribe((data:any[])=>{
+      this.categoryList=data;
+    })
+  }
+
+  deleteCategory(id){
+    this.categoryService.deleteCategory(id).subscribe(()=>{
+      this.alertify.error("Category Deleted Successfully");
+      this.bindCategory();
+    })
+  }
+
+  EditCategory(id){
+    this.router.navigate(['/admin/addcategory/'+id]);
+  }
 }
