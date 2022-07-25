@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ArticleComponent } from './Admin/article/article.component';
 import { AddCategoryComponent } from './Admin/category/addcategory/add-category.component';
 import { CategoryComponent } from './Admin/category/category.component';
 import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcategory/addsubcategory.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'subcategory', component: SubcategoryComponent },
       { path: 'addsubcategory', component: AddsubcategoryComponent },
       { path: 'addsubcategory/:id', component: AddsubcategoryComponent },
+      { path: 'article', component: ArticleComponent },
     ]
   }
 ];

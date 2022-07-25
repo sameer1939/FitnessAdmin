@@ -19,6 +19,8 @@ import { AlertifyService } from './services/alertify.service';
 import { ErrorHandlingInterceptor } from './shared/Errorhandling.interceptor';
 import { SubcategoryComponent } from './Admin/category/subcategory/subcategory.component';
 import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcategory/addsubcategory.component';
+import { ArticleComponent } from './Admin/article/article.component';
+import { AddArticleComponent } from './Admin/article/add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcate
     FooterComponent,
     MainComponent,
     SubcategoryComponent,
-    AddsubcategoryComponent
+    AddsubcategoryComponent,
+    ArticleComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
