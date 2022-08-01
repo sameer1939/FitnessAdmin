@@ -16,6 +16,7 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { CategoryService } from './services/category.service';
 import { AlertifyService } from './services/alertify.service';
+import { ArticleService } from './services/article.service';
 import { ErrorHandlingInterceptor } from './shared/Errorhandling.interceptor';
 import { SubcategoryComponent } from './Admin/category/subcategory/subcategory.component';
 import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcategory/addsubcategory.component';
@@ -43,9 +44,9 @@ import { AddArticleComponent } from './Admin/article/add-article/add-article.com
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [AuthService, CategoryService,AlertifyService,
+  providers: [AuthService, CategoryService,AlertifyService,ArticleService,
   {
     provide:HTTP_INTERCEPTORS,
     useClass:ErrorHandlingInterceptor,

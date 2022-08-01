@@ -1,1 +1,54 @@
-<p>article works!</p>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Article List</h3>
+              <a routerLink="/admin/addshortarticle" class="btn btn-success float-sm-right">Add Short Article</a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
+                    <th>Heading</th>
+                    <th>Article</th>
+                    <th>Image</th>
+                    <th>Is Visible</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >
+                    <td>1</td>
+                    <td>Exercise</td>
+                    <td>Back</td>
+                    <td>How to Do back workout</td>
+                    <td>This is my first article</td>
+                    <td>Image Url</td>
+                    <td>True</td>
+                    <td> 
+                      <a href="javascript:void(0)" class="btn btn-success mr-2" (click)="EditArticle(1)">Edit</a>
+                      <a href="javascript:void(0)" (click)="deleteArticle(1)" class="btn btn-danger mr-2">Delete</a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>

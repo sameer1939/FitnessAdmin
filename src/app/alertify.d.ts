@@ -1,1 +1,2 @@
-declare module 'alertifyjs'
+declare module 'alertifyjs';
+declare module 'jquery'

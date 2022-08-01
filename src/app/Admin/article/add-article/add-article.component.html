@@ -1,1 +1,82 @@
-<p>add-article works!</p>
+ <!-- Main content -->
+ <section class="content">
+    <div class="container-fluid  mt-2">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-10 offset-md-1">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Article</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form #articleForm="ngForm" (ngSubmit)="AddShortArticle(articleForm)">
+              <div class="card-body">
+                <div class="form-group">
+                    <label for="categoryname">Select Category</label>
+                    <select class="form-control" required [(ngModel)]="article.categoryId" name="categoryId">
+                        <option value="0">--select--</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="categoryname">Select Sub Category</label>
+                    <select class="form-control" required [(ngModel)]="article.subCategoryId" name="subCategoryId">
+                        <option value="0">--select--</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                  <label for="categoryname">Heading </label>
+                  <input type="text" class="form-control" id="heading" required [(ngModel)]="article.heading" name="heading" placeholder="Heading">
+                </div>
+                <div class="form-group">
+                    <label for="categoryname">Short Article </label>
+                    <textarea class="textarea" id="txtShortArticle" placeholder="Add Article" [(ngModel)]="article.shortArticle" name="shortArticle"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </div>
+                  <div>
+                    <p>{{article.shortArticle}}</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="customFile">Article Image</label>
+                    <div class="custom-file">
+                      <input type="file" (change)="handleFileUpload($event.target.files)" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="categoryname">Full Article in English </label>
+                    <textarea class="textarea" id="txtArticleInEnglish" placeholder="Full Article in English" [(ngModel)]="article.articleInEnglish" name="articleInEnglish"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="categoryname">Full Article in Hindi </label>
+                    <textarea class="textarea" id="txtArticleInHindi" placeholder="Full Article in Hindi" [(ngModel)]="article.articleInHindi" name="articleInHindi"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </div>
+                
+                <div class="form-check">
+                  <input type="checkbox" name="visible" [(ngModel)]="article.visible" class="form-check-input" id="isVisible">
+                  <label class="form-check-label" for="isVisible">Is Visible?</label>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" [disabled]="!articleForm.valid" class="btn btn-primary mr-2">Submit</button>
+                <a routerLink="/admin/article" class="btn btn-warning">Back</a>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!--/.col (left) -->
+       
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
