@@ -11,11 +11,22 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
 
   getArticles() {
-    return this.http.get(this.baseUrl + "article/getAll");
+    return this.http.get(this.baseUrl + "article/bindarticle");
   }
 
   addArticle(article: FormData) {
     return this.http.post(this.baseUrl + "article/add", article);
   }
 
+  deleteArticle(id) {
+    return this.http.delete(this.baseUrl + "article/deletearticle/"+id);
+  }
+  // get single article by id
+  getArticlebyId(id){
+    return this.http.get(this.baseUrl+"article/articleById/"+id);
+  }
+  // update article details
+  updateArticle(article: FormData) {
+    return this.http.put(this.baseUrl + "article/update", article);
+  }
 }

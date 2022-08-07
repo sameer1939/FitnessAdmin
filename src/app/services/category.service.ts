@@ -24,7 +24,7 @@ export class CategoryService {
   bindCategory(){
     return this.http.get(this.baseUrl+"category/bindcategory");
   }
-  
+
   bindVisibleCategory(){
     return this.http.get(this.baseUrl+"category/bindVisibleCategory");
   }
@@ -47,13 +47,13 @@ export class CategoryService {
   bindSubCategory(){
     return this.http.get(this.baseUrl+"subcategory/bindSubCategory");
   }
-  
+
   // get single sub category detail
   getSubCategorybyId(id){
     return this.http.get(this.baseUrl+"subcategory/subCategoryById/"+id);
   }
 
-  // update sub category 
+  // update sub category
   updateSubCategory(subCategory: SubCategory) {
     return this.http.put(this.baseUrl + "subcategory/update", subCategory)
   }
@@ -61,5 +61,9 @@ export class CategoryService {
   // delete sub category
   deleteSubCategory(id){
     return this.http.delete(this.baseUrl+"subcategory/deletesubcategory/"+id);
+  }
+  // get by category
+  getSubCatByCategoryId(id){
+    return this.http.get(this.baseUrl+"subcategory/getbyCategoryId/"+id);
   }
 }

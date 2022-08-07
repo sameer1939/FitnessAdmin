@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'addsubcategory/:id', component: AddsubcategoryComponent },
       { path: 'article', component: ArticleComponent },
       { path: 'addshortarticle', component: AddArticleComponent },
+      { path: 'addshortarticle/:id', component: AddArticleComponent },
     ]
   }
 ];

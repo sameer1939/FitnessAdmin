@@ -19,5 +19,9 @@ error(msg: string) {
 warning(msg: string) {
   alertify.warning(msg);
 }
+confirm(title: string, message: string, okCallback: () => any, cancelCallback: () => any) {
+  alertify.confirm(title, message, () => { okCallback(); }
+              , () => { cancelCallback(); });
+}
 
 }

@@ -28,9 +28,13 @@ export class SubcategoryComponent implements OnInit {
   }
 
   deleteSubCategory(id){
-    this.categoryService.deleteSubCategory(id).subscribe(()=>{
-      this.alertify.error("Category Deleted Successfully");
-      this.bindSubCategory();
+    this.alertify.confirm("Warning","Are you sure you want to delete this category",()=>{
+      this.categoryService.deleteSubCategory(id).subscribe(()=>{
+        this.alertify.error("Category Deleted Successfully");
+        this.bindSubCategory();
+      })
+    },()=>{
+      console.log('cancel delete');
     })
   }
 }
