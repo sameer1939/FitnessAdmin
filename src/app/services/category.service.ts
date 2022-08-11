@@ -13,11 +13,11 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  addCategory(category: Category) {
+  addCategory(category: FormData) {
     return this.http.post(this.baseUrl + "category/add", category)
   }
 
-  updateCategory(category: Category) {
+  updateCategory(category: FormData) {
     return this.http.put(this.baseUrl + "category/update", category)
   }
 
