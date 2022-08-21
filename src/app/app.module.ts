@@ -18,10 +18,12 @@ import { CategoryService } from './services/category.service';
 import { AlertifyService } from './services/alertify.service';
 import { ArticleService } from './services/article.service';
 import { ErrorHandlingInterceptor } from './shared/Errorhandling.interceptor';
+import { JwtInterceptor } from './shared/Jwt.interceptor';
 import { SubcategoryComponent } from './Admin/category/subcategory/subcategory.component';
 import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcategory/addsubcategory.component';
 import { ArticleComponent } from './Admin/article/article.component';
 import { AddArticleComponent } from './Admin/article/add-article/add-article.component';
+import { AuthGuard } from './shared/auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,12 @@ import { AddArticleComponent } from './Admin/article/add-article/add-article.com
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, CategoryService,AlertifyService,ArticleService,
+  providers: [AuthGuard,AuthService, CategoryService,AlertifyService,ArticleService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:JwtInterceptor,
+      multi:true
+    },
   {
     provide:HTTP_INTERCEPTORS,
     useClass:ErrorHandlingInterceptor,

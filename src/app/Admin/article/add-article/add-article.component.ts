@@ -41,7 +41,7 @@ export class AddArticleComponent implements OnInit {
         this.article.categoryId = data.categoryId;
         this.article.subCategoryId = data.subCategoryId;
         this.article.visible = data.visible;
-        this.article.heading = data.headingName;
+        this.article.heading = data.heading;
         $('#txtShortArticle').summernote('code',data.shortArticle);
         this.imgURL = this.ImageUrl+data.image;
         $('#txtArticleInEnglish').summernote('code', data.articleInEnglish);
