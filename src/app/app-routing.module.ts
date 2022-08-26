@@ -10,6 +10,9 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { AuthGuard } from '../app/shared/auth.guard';
+import { StoryComponent } from './Admin/stories/story.component';
+import { BannerComponent } from './Admin/banners/banner.component';
+import { AddstoriesComponent } from './Admin/stories/addstories/addstories.component';
 
 
 const routes: Routes = [
@@ -26,6 +29,10 @@ const routes: Routes = [
       { path: 'article', component: ArticleComponent },
       { path: 'addshortarticle', component: AddArticleComponent },
       { path: 'addshortarticle/:id', component: AddArticleComponent },
+      { path: 'story', component: StoryComponent },
+      { path: 'banner', component: BannerComponent },
+      { path: 'addstory', component: AddstoriesComponent },
+      { path: 'addstory/:id', component: AddstoriesComponent }
     ]
   }
 ];

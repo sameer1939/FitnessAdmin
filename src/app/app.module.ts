@@ -17,6 +17,7 @@ import { MainComponent } from './main/main.component';
 import { CategoryService } from './services/category.service';
 import { AlertifyService } from './services/alertify.service';
 import { ArticleService } from './services/article.service';
+import { StoryService } from './services/Story.service';
 import { ErrorHandlingInterceptor } from './shared/Errorhandling.interceptor';
 import { JwtInterceptor } from './shared/Jwt.interceptor';
 import { SubcategoryComponent } from './Admin/category/subcategory/subcategory.component';
@@ -24,6 +25,9 @@ import { AddsubcategoryComponent } from './Admin/category/subcategory/addsubcate
 import { ArticleComponent } from './Admin/article/article.component';
 import { AddArticleComponent } from './Admin/article/add-article/add-article.component';
 import { AuthGuard } from './shared/auth.guard';
+import { BannerComponent } from './Admin/banners/banner.component';
+import { StoryComponent } from './Admin/stories/story.component';
+import { AddstoriesComponent } from './Admin/stories/addstories/addstories.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,10 @@ import { AuthGuard } from './shared/auth.guard';
     SubcategoryComponent,
     AddsubcategoryComponent,
     ArticleComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    BannerComponent,
+    StoryComponent,
+    AddstoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,7 @@ import { AuthGuard } from './shared/auth.guard';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard,AuthService, CategoryService,AlertifyService,ArticleService,
+  providers: [AuthGuard,AuthService, CategoryService,AlertifyService,ArticleService,StoryService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:JwtInterceptor,

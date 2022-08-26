@@ -1,0 +1,52 @@
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6 offset-md-3">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Story</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form #storyForm="ngForm" (ngSubmit)="AddStories(storyForm)">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="videoTitle">Title</label>
+                                <input type="text" class="form-control" id="videoTitle" [(ngModel)]="story.videoTitle"
+                                    required name="videoTitle" #videoTitle="ngModel" placeholder="Video Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryname">Video Url</label>
+                                <input type="text" class="form-control" id="videoUrl" [(ngModel)]="story.videoUrl"
+                                    required name="videoUrl" #videoUrl="ngModel" placeholder="Video Url">
+                            </div>
+
+
+                            <div class="form-check">
+                                <input type="checkbox" [(ngModel)]="story.visible" name="visible" #visible="ngModel"
+                                    class="form-check-input" id="isVisible">
+                                <label class="form-check-label" for="isVisible">Is Visible?</label>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" [disabled]="!storyForm.valid"
+                                class="btn btn-primary mr-2">Submit</button>
+                            <a routerLink="/admin/story" class="btn btn-warning">Back</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!--/.col (left) -->
+
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
