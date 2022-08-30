@@ -24,6 +24,7 @@ export class AddstoriesComponent implements OnInit {
         this.story.videoTitle = data.videoTitle;
         this.story.visible = data.visible;
         this.story.videoUrl = data.videoUrl;
+        this.story.imageUrl = data.imageUrl;
       })
     }
   }
@@ -32,6 +33,7 @@ export class AddstoriesComponent implements OnInit {
     this.story.videoTitle = story.control.get('videoTitle').value;
     this.story.videoUrl = story.control.get('videoUrl').value;
     this.story.visible = story.control.get('visible').value;
+    this.story.imageUrl = story.control.get('imageUrl').value;
 
     if (this.route.snapshot.paramMap.get("id")) {
       // Update Stories

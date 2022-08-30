@@ -13,6 +13,7 @@ import { AuthGuard } from '../app/shared/auth.guard';
 import { StoryComponent } from './Admin/stories/story.component';
 import { BannerComponent } from './Admin/banners/banner.component';
 import { AddstoriesComponent } from './Admin/stories/addstories/addstories.component';
+import { NotFoundComponent } from './Layout/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
       { path: 'addstory', component: AddstoriesComponent },
       { path: 'addstory/:id', component: AddstoriesComponent }
     ]
-  }
+  },
+  {path:'**',component:NotFoundComponent}
 ];
 
 @NgModule({

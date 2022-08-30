@@ -28,6 +28,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { BannerComponent } from './Admin/banners/banner.component';
 import { StoryComponent } from './Admin/stories/story.component';
 import { AddstoriesComponent } from './Admin/stories/addstories/addstories.component';
+import { NotFoundComponent } from './Layout/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AddstoriesComponent } from './Admin/stories/addstories/addstories.compo
     AddArticleComponent,
     BannerComponent,
     StoryComponent,
-    AddstoriesComponent
+    AddstoriesComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
